@@ -1,0 +1,118 @@
+/******* Change Box Model ***************/
+:root {
+  --accentColor: #6a006a;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  /* max-width: 500px; */
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Header */
+#top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.siteName {
+  font-weight: bold;
+  font-size: larger;
+  align-self: center;
+}
+
+#tools {
+  font-size: small;
+  align-self: flex-start;
+}
+
+/* Nav */
+nav {
+  background-color: black;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+nav ul li, #hook {
+  list-style: none;
+}
+
+/* Body */
+h1 {
+  font-size: 30px;
+  font-style: bold;
+}
+#hero {
+  position: relative;
+}
+
+#img img{
+  width: 100%;
+}
+
+#hook {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  padding: 0 0 0 10px;
+  background-color: rgba(191, 205, 218, .9);
+  width: 150px;
+  height: 150px;
+  font-size: small;
+  color: var(--accentColor);
+}
+
+#hook img {
+  width: 80%;
+  padding-bottom: 10px;
+}
+
+/* content container */
+#content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+/* Upgrades */
+#grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+}
+
+.container {
+  background-color: var(--accentColor);
+  width: 200px;
+  height: 80px;
+}
+
+.bg a {
+  text-align: center;
+  font-style: italic;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  font-size: smaller;
+}

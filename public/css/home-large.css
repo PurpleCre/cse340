@@ -1,0 +1,27 @@
+@media screen  and (min-width:500px){
+    /* set bacground img for large view */
+    :root {
+        background-image: url(../images/site/checkerboard.jpg);
+    }
+
+    /* refactor body dimensions for larger view */
+    body {
+        background-color: rgb(244, 250, 248);
+        max-width: 900px;
+        margin: 20px auto;
+        border: 5px solid purple;
+        border-radius: 15px;
+    }
+
+    #hook {
+        width: 300px;
+        height: 300px;
+        font-size: x-large;
+    }
+
+    /* display reviews and upgrades side by side */
+    #content {
+        grid-template-columns: 1fr 1fr;
+        padding: 10px 20px
+    }
+}
