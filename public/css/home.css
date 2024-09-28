@@ -13,6 +13,7 @@ body {
   /* max-width: 500px; */
   margin: 0 auto;
   padding: 10px 15px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 a {
@@ -56,7 +57,7 @@ nav ul li, #hook {
 /* Body */
 h1 {
   font-size: 30px;
-  font-style: bold;
+  font-weight: bold;
 }
 #hero {
   position: relative;
