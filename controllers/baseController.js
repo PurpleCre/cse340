@@ -6,4 +6,8 @@ baseController.buildHome = async function(req, res){
   res.render("index", {title: "Home", nav})
 }
 
+baseController.footerErr = async function (req, res) {
+  res.render("/par/footer", "Yebo")
+}
+
 module.exports = baseController
