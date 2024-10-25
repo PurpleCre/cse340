@@ -18,6 +18,8 @@ router.get("/detail/:invId", invController.buildByInvId);
 router.get("/", invController.buildManagement);
 // Route to build add classification view
 router.get("/add/classification", invController.buildClassification);
+// Route to build add classification view
+router.get("/add/inventory", invController.buildInv);
 // Route to deliver footer error
 router.get("../partials/footer", baseController.footerErr)
 
@@ -26,6 +28,11 @@ router.post('/add/classification',
     invValidate.classificationRules(),
     invValidate.checkClassData,
     utilities.handleErrors(invController.addClassification))
+// Handle inventroy addition
+router.post('/add/inventory',
+    invValidate.invRules(),
+    invValidate.checkInvData,
+    utilities.handleErrors(invController.addInventory))
 
 
 module.exports = router;

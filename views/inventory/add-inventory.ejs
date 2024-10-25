@@ -1,7 +1,28 @@
-<%- messages() %>
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+} %>
 
-<form action="" method="post">
-    <label>vehicle name: <input type="text" name="classification_name" id="c_name" required></label>
-    <p>Classification name must not contain any spces or special characters of any kind</p>
-    <button type="submit">Add Classification</button>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<form id="inv" action="" method="post">
+    <label>Classification: <%- classification_list %></label>
+    <label>Make <input type="text" name="inv_make" id="inv_make" required value="<%= locals.inv_make%>"></label>
+    <label>Model <input type="text" name="inv_model" id="inv_model" required value="<%= locals.inv_model%>"></label>
+    <label>Year <input type="number" name="inv_year" id="inv_year" required value="<%= locals.inv_year%>"></label>
+    <label>Description <input type="text" name="inv_description" id="inv_description" required value="<%= locals.invinv_description%>"></label>
+    <label>Image <input type="image" name="inv_image" src="images/vehicles/no-image.png" alt="no image" id="inv_image" required value="<%= locals.inv_image%>"></label>
+    <label>Thumbnail <input type="image" name="inv_thumbnail" src="images/vehicles/no-image.png" alt="no image" id="inv_thumbnail" required value="<%= locals.inv_thumbnail%>"></label>
+    <label>price <input type="number" name="inv_price" id="inv_price" required value="<%= locals.inv_price%>"></label>
+    <label>Miles <input type="number" name="inv_miles" id="inv_miles" required value="<%= locals.inv_miles%>"></label>
+    <label>Color <input type="text" name="inv_color" id="inv_color" required value="<%= locals.inv_color%>"></label>
+    <button type="submit">Add to inventory</button>
 </form>

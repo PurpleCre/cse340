@@ -44,4 +44,37 @@ validate.checkClassData = async (req, res, next) => {
     next()
 }
 
+/*  **********************************
+  *  Inventory Data Validation Rules
+  * ********************************* */
+validate.invRules = () => {
+    return [
+      // classification is required and must be string
+      body("inv_make")
+        .trim()
+        .escape()
+        .notEmpty()
+        .withMessage("Please provide a make.") // on error this message is sent.
+    ]
+}
+
+/* ******************************
+ * Check data and return errors or continue to add classification
+ * ***************************** */
+validate.checkInvData = async (req, res, next) => {
+    const { inv_make, inv_model, inv_color, inv_description, inv_image, inv_miles, inv_price, inv_thumbnail, inv_year} = req.body
+    let errors = []
+    errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      let nav = await utilities.getNav()
+      res.render("inventory/add-inventory", {
+        errors,
+        title: "Add Inventory",
+        nav, inv_make, inv_model, inv_color, inv_description, inv_image, inv_miles, inv_price, inv_thumbnail, inv_year
+      })
+      return
+    }
+    next()
+}
+
 module.exports = validate;

@@ -50,11 +50,28 @@ invCont.buildManagement = async function (req, res, next) {
   });
 };
 
+/* ***************************
+ *  Build Add Classification View
+ * ************************** */
 invCont.buildClassification = async function (req, res, next) {
   let nav = await utilities.getNav();
   res.render("inventory/add-classification", {
     title: "Add Classification",
     nav,
+    errors: null,
+  });
+};
+
+/* ***************************
+ *  Build Add Inventory View
+ * ************************** */
+invCont.buildInv = async function (req, res, next) {
+  let nav = await utilities.getNav();
+  let classification_list = await utilities.buildClassificationList();
+  res.render("inventory/add-inventory", {
+    title: "Add Inventory Item",
+    nav,
+    classification_list,
     errors: null,
   });
 };
