@@ -34,5 +34,4 @@ router.post('/add/inventory',
     invValidate.checkInvData,
     utilities.handleErrors(invController.addInventory))
 
-
 module.exports = router;
