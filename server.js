@@ -5,6 +5,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const pool = require("./database")
@@ -40,6 +41,10 @@ app.use(function(req, res, next){
 // body parser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+// cookie parser
+app.use(cookieParser())
+// check JWT token
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * View Engine Templates

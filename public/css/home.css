@@ -200,9 +200,19 @@ button:hover{
 /* forms */
 form {
   margin: 1rem 2%;
+  border: 2px purple solid;
+  padding: 10px;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr;
 }
+
+#updateForms {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: first baseline;
+}
+
 
 label {
   display: block;
